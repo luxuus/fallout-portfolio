@@ -1,0 +1,237 @@
+@font-face {font-family: "Kiddie Cocktails ITC Std";src: url("Kiddie-Cocktails-ITC-Std-Regular.ttf");}
+@font-face {font-family: "Chowderhead";src: url("Chowderhead-Medium.ttf")}
+/* Reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --clr-primary: #f1f1f1;
+    --bg-primary: #0d0f12;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: var(--clr-primary);
+    background-color: #325989;
+opacity: 1;
+background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
+background-size: 40px 100%;
+
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Monofonto', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Inter', sans-serif;
+    box-shadow: inset 7px -14px 20px 18px #000000;
+}
+
+
+/* Main */
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.path{
+    cursor: pointer;
+    pointer-events:all;
+}
+
+.special{
+    padding: 20px 0;
+    display: flex;
+    width: 950px;
+    height: 210px;
+    position: relative;
+    font-family: 'Kiddie Cocktails ITC Std';
+    transform: scale(0.85);
+    
+}
+
+.special .letter a{
+    text-decoration: none;
+    perspective: 500px;
+    user-select: none;
+}
+
+.special .letter a:link,
+.special .letter a:visited{
+    color: #000;
+}
+
+.special a::after, .special a::before{
+    content: attr(data-letter);
+    color: var(--clr-primary);
+    position: absolute;
+    transform-origin: left;
+    inset: 0;
+    transition: transform 0.2s ease-out;
+}
+
+
+.special a:hover::before{
+    color: rgba(0,0,0,0.122);
+    transform: scaleX(0.85) skewY(20deg);
+}
+
+.special a:hover::after{
+    transform: rotateY(-30deg);
+}
+
+.special a:focus{
+    outline: none;
+}
+
+.special a:focus::after{
+    color: red;
+}
+
+.strength {
+    position: absolute;
+    z-index: 1;
+
+}
+
+svg{
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+.strength a{
+    position: absolute;
+    right: 32px;
+    top: -14px;
+    font-size: 190px;
+}
+
+.perception{
+    position: absolute;
+    z-index: 2;
+    left: 112px;
+}
+
+.perception a{
+    position: absolute;
+    right: 24px;
+    top: 3px;
+    font-size: 160px;
+}
+
+.endurance{
+    position: absolute;
+    z-index: 3;
+    left: 233px;
+}
+
+.endurance a{
+    position: absolute;
+    font-size: 160px;
+    right: 25px;
+}
+
+.charisma{
+    position: absolute;
+    left: 344px;
+    bottom: 20px;
+    z-index: 4;
+}
+
+.charisma a{
+    position: absolute;
+    font-size: 170px;
+    right: 20px;
+    top: 0px;
+}
+
+.intelligence{
+    position: absolute;
+    left: 463px;
+    z-index: 5;
+}
+
+.intelligence a{
+    position: absolute;
+    font-size: 200px;
+    right: 40px;
+    top: -21px;
+}
+
+.agility{
+    position: absolute;
+    left: 583px;
+    bottom: 33px;
+    z-index: 6;
+}
+
+.agility a{
+    position: absolute;
+    top: -5px;
+    font-size: 188px;
+    right: 25px;
+}
+
+.luck{
+    position: absolute;
+    left: 705px;
+    top: 16px;
+    z-index: 7;
+}
+
+.luck a{
+    position: absolute;
+    font-size: 187px;
+    right: 33px;
+    bottom: -15px;
+}
+
+.question-mark{
+    position: absolute;
+    transform: rotateZ(7deg);
+    font-size: 190px;
+    font-family: "Chowderhead";
+    color: #f5cb5b;
+    left: 830px;
+    bottom: 3px;
+    user-select: none;
+}
+
+.container p::first-letter{
+    font-family: "Kiddie Cocktails ITC Std";
+    font-size: 100px;
+    margin-left: 20px;
+}
+
+.container p{
+    font-family: "Chowderhead";
+    letter-spacing: 5px;
+    font-size: 27px;
+}
+
+.container{
+    background: none;
+}
+
+
+.test{
+    background: red;
+    height: 170px;
+    width: 134px;
+    transform: matrix3d(
+        0.9797637525818556,	-0.04411764705882353,	0,	0.00039186150254824555,
+        -0.05813953488372093,	0.9951391338381032,	0,	0.0001745514812112544,
+        0,	0,	1,	0,
+        10,	6,	0,	1
+        )
+        
+}
+@media (max-width:960px) {
+    
+}
+

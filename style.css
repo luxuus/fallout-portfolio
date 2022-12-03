@@ -1,5 +1,6 @@
 @font-face {font-family: "Kiddie Cocktails ITC Std";src: url("Kiddie-Cocktails-ITC-Std-Regular.ttf");}
 @font-face {font-family: "Chowderhead";src: url("Chowderhead-Medium.ttf")}
+
 /* Reset CSS */
 *{
     margin: 0;
@@ -9,8 +10,8 @@
 
 :root{
     --clr-primary: #f1f1f1;
+    --clr-text: black;
     --bg-primary: #0d0f12;
-
 }
 
 html{
@@ -20,13 +21,9 @@ html{
 body{
     color: var(--clr-primary);
     background-color: #325989;
-opacity: 1;
-background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
-background-size: 40px 100%;
-
-    /* font-family: 'Roboto', sans-serif; */
-    /* font-family: 'Monofonto', sans-serif; */
-    /* font-family: 'Roboto', sans-serif; */
+    opacity: 1;
+    background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
+    background-size: 40px 100%;
     font-family: 'Inter', sans-serif;
     box-shadow: inset 7px -14px 20px 18px #000000;
 }
@@ -60,6 +57,22 @@ header{
     text-decoration: none;
     perspective: 500px;
     user-select: none;
+}
+
+.letter:not(:last-child):before{
+    content: url("data:image/svg+xml,%3Csvg width='65.755386' height='46.653492' viewBox='0 0 65.755388 46.653494' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cellipse style='fill:%23f2f5e0;stroke:%23000000;stroke-width:2.13165;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;paint-order:markers fill stroke' id='path120' ry='22.26092' rx='31.811867' cy='23.326744' cx='32.877693' /%3E%3C/svg%3E%0A");
+    position: absolute;
+    transform-origin: left;
+    z-index: 10;
+}
+
+.letter:not(:last-child):after{
+    font-family: "Chowderhead";
+    font-size: 35px;
+    color: #000;
+    position: absolute;
+    transform-origin: left;
+    z-index: 20;
 }
 
 .special .letter a:link,
@@ -100,15 +113,27 @@ header{
 
 }
 
-svg{
+svg,.letter:before{
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
+
 
 .strength a{
     position: absolute;
     right: 32px;
     top: -14px;
     font-size: 190px;
+}
+
+.strength::before{
+    bottom: -21px;
+    left: 33px;
+}
+
+.strength::after{
+    content: "4";
+    bottom: -11px;
+    left: 56px; 
 }
 
 .perception{
@@ -124,6 +149,17 @@ svg{
     font-size: 160px;
 }
 
+.perception::before{
+    bottom: -15px;
+    left: 40px;
+}
+
+.perception::after{
+    content: "9";
+    bottom: -6px;
+    left: 63px; 
+}
+
 .endurance{
     position: absolute;
     z-index: 3;
@@ -134,6 +170,17 @@ svg{
     position: absolute;
     font-size: 160px;
     right: 25px;
+}
+
+.endurance::before{
+    bottom: -10px;
+    left: 34px;
+}
+
+.endurance::after{
+    content: "3";
+    bottom: -3px;
+    left: 57px; 
 }
 
 .charisma{
@@ -150,6 +197,17 @@ svg{
     top: 0px;
 }
 
+.charisma::before{
+    bottom: -23px;
+    left: 44px;
+}
+
+.charisma::after{
+    content: "5";
+    bottom: -13px;
+    left: 66px; 
+}
+
 .intelligence{
     position: absolute;
     left: 463px;
@@ -161,6 +219,17 @@ svg{
     font-size: 200px;
     right: 40px;
     top: -21px;
+}
+
+.intelligence::before{
+    bottom: -19px;
+    left: 40px;
+}
+
+.intelligence::after{
+    content: "7";
+    bottom: -10px;
+    left: 63px; 
 }
 
 .agility{
@@ -177,6 +246,17 @@ svg{
     right: 25px;
 }
 
+.agility::before{
+    bottom: -22px;
+    left: 32px;
+}
+
+.agility::after{
+    content: "7";
+    bottom: -14px;
+    left: 57px; 
+}
+
 .luck{
     position: absolute;
     left: 705px;
@@ -191,6 +271,17 @@ svg{
     bottom: -15px;
 }
 
+.luck::before{
+    bottom: -15px;
+    left: 27px;
+}
+
+.luck::after{
+    content: "8";
+    bottom: -7px;
+    left: 50px; 
+}
+
 .question-mark{
     position: absolute;
     transform: rotateZ(7deg);
@@ -202,36 +293,46 @@ svg{
     user-select: none;
 }
 
-.container p::first-letter{
-    font-family: "Kiddie Cocktails ITC Std";
-    font-size: 100px;
-    margin-left: 20px;
+
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    grid-template-columns: repeat(auto-fill, 300px);
+    max-width: 1000px;
+    gap: 30px 50px;
+    padding: 40px 0;
+    color: var(--clr-text);
 }
 
-.container p{
+
+.container-item{
+    background: rgb(235, 235, 235);
+    height: 300px;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 6px 4px 1px 1px black;
     font-family: "Chowderhead";
     letter-spacing: 5px;
     font-size: 27px;
 }
 
-.container{
-    background: none;
+.container-item::first-letter{
+    font-family: "Kiddie Cocktails ITC Std";
+    font-size: 100px;
+    margin-left: 20px;
 }
 
 
-.test{
-    background: red;
-    height: 170px;
-    width: 134px;
-    transform: matrix3d(
-        0.9797637525818556,	-0.04411764705882353,	0,	0.00039186150254824555,
-        -0.05813953488372093,	0.9951391338381032,	0,	0.0001745514812112544,
-        0,	0,	1,	0,
-        10,	6,	0,	1
-        )
-        
-}
-@media (max-width:960px) {
-    
+.container-item:hover{
+    background: rgb(255, 255, 255);
 }
 
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background: #000;
+}

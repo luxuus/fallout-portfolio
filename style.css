@@ -9,11 +9,7 @@
     box-sizing: border-box;
 }
 
-:root{
-    --clr-primary: #f1f1f1;
-    --clr-text: black;
-    --bg-primary: #0d0f12;
-}
+
 
 html{
     scroll-behavior: smooth;
@@ -25,9 +21,12 @@ body{
     opacity: 1;
     background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
     background-size: 40px 100%;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Roboto',sans-serif;
     box-shadow: inset 7px -14px 20px 18px #000000;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 
@@ -313,7 +312,16 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     color: white;
+    gap: 20px;
+}
+
+.ctn-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 footer{
@@ -428,37 +436,91 @@ button:hover{
     gap: 30px;
 }
 
+
+:root{
+    --clr-primary: #f1f1f1;
+    --clr-text: black;
+    --bg-primary: #0d0f12;
+
+    --card-height : 400px;
+    
+    --card-item--pd: calc(var(--card-height) * 0.01);
+    --card-item--br: calc(var(--card-height) * 0.00625);
+    --card-item--brs: calc(var(--card-height) * 0.0425);
+
+    --card-img: calc(var(--card-height) * 0.5375);
+
+    --card-ctn-bfr--ht: calc(var(--card-height) * 0.175);
+    --card-ctn-bfr--left: calc(var(--card-height) * -0.045);
+    --card-ctn-bfr--top: calc(var(--card-height) * -0.025);
+    --card-ctn-bfr--brs: calc(var(--card-height) * 0.0375);
+
+    --card-header--ht: calc(var(--card-height) * 0.1);
+    --card-header--left: calc(var(--card-height) * -0.145);
+    --card-header-bfr--left: calc(var(--card-height) * -0.05);
+    --card-header-bfr--top: calc(var(--card-height) * -0.03);
+    --card-header-bfr--brs: calc(var(--card-height) * 0.0375);
+
+    --card-header-front: calc(var(--card-height) * 0.1625);
+    --card-header-back: calc(var(--card-point) + 20px);
+
+    --card-header--fr: calc(var(--card-height) * 0.07);
+    --card-header--brs: calc(var(--card-height) * 0.03);
+
+    --card-point--br: calc(var(--card-height) * 0.0125);
+    --card-point--brs: calc(var(--card-height) * 0.03);
+    --card-point--ft: calc(var(--card-height) * 0.12);
+    --card-point--ht: calc(var(--card-height) * 0.12);
+
+    --card-section--ft: calc(var(--card-height) * 0.0425);
+    --card-section--br: calc(var(--card-height) * 0.0075);
+    --card-section--brs: calc(var(--card-height) * 0.0225);
+    --card-section--pd: calc(var(--card-height) * 0.0425);
+
+    --card-section-footer--ht: calc(var(--card-height) * 0.15);
+    --card-section-footer-p--ft: calc(var(--card-height) * 0.0375);
+    --card-section-footer-span--ft: calc(var(--card-height) * 0.06);
+    --card-section-footer-span--lh: calc(var(--card-height) * 0.055);
+    --card-section-footer-span--right: calc(var(--card-height) * 0.025);
+    --card-section-footer-span--gap: calc(var(--card-height) * 0.015);
+    --card-section-footer-span--ls: calc(var(--card-height) * 0.00125);
+
+}
+
+
 .ctn-card{
+    display: flex;
+    flex-direction: column;
     position: relative;
-    height: 400px;
+    height: var(--card-height);
     aspect-ratio: 10/13.9;
     background: rgba(244,237,223,255);
-    border-radius: 17px;
-    border: 3px solid rgb(80, 80, 80);
+    border-radius: var(--card-item--brs);
+    border: var(--card-item--br) solid rgb(80, 80, 80);
     font-family: "Chowderhead";
     color: #323232;
-    padding: 4px;
+    padding: var(--card-item--pd);
 }
 
 .ctn-card::before{
     content: '';
     position: absolute;
     aspect-ratio: 1/1;
-    height: 69px;
+    height: var(--card-ctn-bfr--ht);
     background: rgb(80, 80, 80);
-    left: -18px;
-    top: -10px;
-    border-radius: 15px;
+    left: var(--card-ctn-bfr--left);
+    top: var(--card-ctn-bfr--top);
+    border-radius: var(--card-ctn-bfr--brs);
     z-index: -1;
 }
 
 .card-header{
     display: flex;
     position: relative;
-    height: 40px;
+    height: var(--card-header--ht);
     background: rgba(132,167,130,255);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: var(--card-header--brs);
+    border-top-right-radius: var(--card-header--brs);
     font-family: 'Roboto';
     color: #f5f5dc;
     justify-content: flex-end;
@@ -467,12 +529,12 @@ button:hover{
 .card-header::before{
     content: attr(data-point);
     position: absolute;
-    left: -20px;
-    top: -12px;
-    height: 65px;
+    left: var(--card-header-bfr--left);
+    top: var(--card-header-bfr--top);
+    height: var(--card-header-front);
     aspect-ratio: 1/1;
     background: #f5edde;
-    border-radius: 15px;
+    border-radius: var(--card-header-bfr--brs);
     z-index: 1;
 }
 
@@ -483,7 +545,7 @@ button:hover{
     align-items: center;
     justify-content: center;
     width: 85%;
-    font-size: 28px;
+    font-size:  var(--card-header--fr);
     z-index: 2;
 }
 
@@ -493,15 +555,15 @@ button:hover{
     align-items: center;
     position: absolute;
     content: attr(data-point);
-    left: -58px;
+    left: var(--card-header--left);
     font-family: "Chowderhead";
-    font-size: 48px;
+    font-size: var(--card-point--ft);
     color: #323232;
-    height: 48px;
+    height: var(--card-point--ht);
     aspect-ratio: 1/1;
     background: #f1e2c1;
-    border: 5px solid #7e9e6f;
-    border-radius: 12px;
+    border: var(--card-point--br) solid #7e9e6f;
+    border-radius: var(--card-point--brs);
     font-weight: 500;
     z-index: 3;
 }
@@ -519,13 +581,12 @@ button:hover{
 .card-image{
     position: relative;
     z-index: 1;
-    height: 210.8px;
+    min-height: var(--card-img);
 }
 .card-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
     pointer-events: none;
     user-select: none;
 }
@@ -534,10 +595,10 @@ button:hover{
     display: flex;
     flex-direction: column;
     background: #ece9d6;
-    border: 3px solid #323234;
-    border-radius: 9px;
+    border: var(--card-section--br) solid #323234;
+    border-radius: var(--card-section--brs);
     justify-content: center;
-    height: 137px;
+    flex: 1;
     box-shadow: 
         inset 0px 2px 20px 0px rgb(0 0 0 / 38%),
         inset 0px -14px 20px 0px rgb(155 155 155 / 77%)
@@ -549,15 +610,15 @@ button:hover{
     align-items: center;
     flex: 1;
     text-align: center;
-    padding: 0 17px;
-    font-size: 17px;
+    padding: 0 var(--card-section--pd);
+    font-size: var(--card-section--ft);
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .card-section-footer{
     position: relative;
-    height: 60px;
+    height: var(--card-section-footer--ht);
     font-family: 'Kiddie Cocktails ITC Std';
 }
 
@@ -571,7 +632,7 @@ button:hover{
 .card-section-footer img{
     position: absolute;
     bottom: 27px;
-    height: 32px;
+    height: calc(var(--card-height) / 10);
     right: -5px;
     
 }
@@ -581,15 +642,15 @@ button:hover{
     align-items: flex-end;
     font-family: "Chowderhead";
     bottom: 0;
-    right: 10px;
-    gap: 6px;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+    right: var(--card-section-footer-span--right);
+    gap: var(--card-section-footer-span--gap);
+    font-size: var(--card-section-footer-p--ft);
+    letter-spacing: var(--card-section-footer-span--ls);
     color: #000;
 }
 
 .card-footer-level span{
-    font-size: 24px;
-    line-height: 22px;
+    font-size: var(--card-section-footer-span--ft);
+    line-height:var(--card-section-footer-span--lh);
     font-weight: 500;
 }

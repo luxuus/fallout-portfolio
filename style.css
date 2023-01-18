@@ -438,71 +438,87 @@ button:hover{
     font-family: "Chowderhead";
     color: #323232;
     padding: 4px;
+}
 
+.ctn-card::before{
+    content: '';
+    position: absolute;
+    aspect-ratio: 1/1;
+    height: 69px;
+    background: rgb(80, 80, 80);
+    left: -18px;
+    top: -10px;
+    border-radius: 15px;
+    z-index: -1;
 }
 
 .card-header{
+    display: flex;
     position: relative;
     height: 40px;
     background: rgba(132,167,130,255);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    font-family: 'Roboto';
+    color: #f5f5dc;
+    justify-content: flex-end;
 }
 
 .card-header::before{
+    content: attr(data-point);
     position: absolute;
-    height: 40px;
-    width: 6px;
-    background: rgba(132,167,130,255);
-}
-
-.card-header-point-ctn{
-    position: relative;
-    height: 70px;
+    left: -20px;
+    top: -12px;
+    height: 65px;
     aspect-ratio: 1/1;
-    background: rgb(80, 80, 80);
+    background: #f5edde;
     border-radius: 15px;
-    top:50%;
-    transform: translate(calc(50% - 60.5px), -50%);
-    z-index: -1;
+    z-index: 1;
 }
 
-.card-header-point{
+
+.card-header h3{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    height: 57px;
-    aspect-ratio: 1/1;
-    transform: translate(calc(-50% + 9px), -50%);
-    background: rgba(241,226,193,255);
-    border: 6px solid rgba(126,158,111,255);
-    outline: 4px solid rgba(244,237,223,255);
-    outline-offset:  -1px;
-    border-radius: 10px;
-    top:50%;
+    width: 85%;
+    font-size: 28px;
     z-index: 2;
-    font-size: 46px;
-    color: #323232;
 }
 
-.card-header-point::after{
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
-    position: inherit;
-    content: 'BANDOLIER';
-    height: 40px;
-    width: 227px;
-    background: rgba(132,167,130,255);
-    left: 47px;
-    bottom: 2.5px;
-    font-size: 27px;
-    color: #f5f4de;
-    font-family: 'Roboto';
+.card-header h3::before{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: attr(data-point);
+    left: -58px;
+    font-family: "Chowderhead";
+    font-size: 48px;
+    color: #323232;
+    height: 48px;
+    aspect-ratio: 1/1;
+    background: #f1e2c1;
+    border: 5px solid #7e9e6f;
+    border-radius: 12px;
+    font-weight: 500;
+    z-index: 3;
+}
+
+.card-header h3::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 20px;
+    background: #84a782;
+    left: -10px;
+
 }
 
 .card-image{
+    position: relative;
+    z-index: 1;
     height: 210.8px;
 }
 .card-image img{

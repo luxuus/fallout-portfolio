@@ -1,5 +1,6 @@
 @font-face {font-family: "Kiddie Cocktails ITC Std";src: url("Kiddie-Cocktails-ITC-Std-Regular.ttf");}
 @font-face {font-family: "Chowderhead";src: url("Chowderhead-Medium.ttf")}
+@font-face {font-family: "Roboto";src: url("Roboto.ttf")}
 
 /* Reset CSS */
 *{
@@ -24,12 +25,13 @@ body{
     opacity: 1;
     background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
     background-size: 40px 100%;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat',sans-serif;
     box-shadow: inset 7px -14px 20px 18px #000000;
+    min-height: 100vh;
 }
 
 
-/* Main */
+/* Start Navbar */
 
 header{
     display: flex;
@@ -37,7 +39,7 @@ header{
     align-items: center;
 }
 
-.path{
+.special .path{
     cursor: pointer;
     pointer-events:all;
 }
@@ -53,20 +55,21 @@ header{
     
 }
 
-.special .letter a{
+.letter a,
+.letter span{
     text-decoration: none;
     perspective: 500px;
     user-select: none;
 }
 
-.letter:not(:last-child):before{
+.special .letter:not(:last-child):before{
     content: url("data:image/svg+xml,%3Csvg width='65.755386' height='46.653492' viewBox='0 0 65.755388 46.653494' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cellipse style='fill:%23f2f5e0;stroke:%23000000;stroke-width:2.13165;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;paint-order:markers fill stroke' id='path120' ry='22.26092' rx='31.811867' cy='23.326744' cx='32.877693' /%3E%3C/svg%3E%0A");
     position: absolute;
     transform-origin: left;
     z-index: 10;
 }
 
-.letter:not(:last-child):after{
+.special .letter:not(:last-child):after{
     font-family: "Chowderhead";
     font-size: 35px;
     color: #000;
@@ -75,12 +78,15 @@ header{
     z-index: 20;
 }
 
-.special .letter a:link,
-.special .letter a:visited{
+
+.letter a:link,
+.letter a:visited{
     color: #000;
 }
 
-.special a::after, .special a::before{
+.letter a::after,
+.letter a::before,
+.letter span::after{
     content: attr(data-letter);
     color: var(--clr-primary);
     position: absolute;
@@ -89,54 +95,61 @@ header{
     transition: transform 0.2s ease-out;
 }
 
+.letter span::after{
+    color: black;
+    text-shadow: -5px 0 rgb(255, 255, 255), 0 5px rgb(255, 255, 255);
 
-.special a:hover::before{
+}
+
+.letter a:hover::before{
     color: rgba(0,0,0,0.122);
     transform: scaleX(0.85) skewY(20deg);
 }
 
-.special a:hover::after{
+.letter a:hover::after{
     transform: rotateY(-30deg);
 }
 
-.special a:focus{
+
+.letter a:focus{
     outline: none;
 }
 
-.special a:focus::after{
+.letter a:focus::after{
     color: red;
 }
 
-.strength {
+.special .strength {
     position: absolute;
     z-index: 1;
-
 }
 
-svg,.letter:before{
+.letter svg,
+.letter:before{
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
 
-.strength a{
+.strength a,
+.strength span{
     position: absolute;
     right: 32px;
     top: -14px;
     font-size: 190px;
 }
 
-.strength::before{
+.special .strength::before{
     bottom: -21px;
     left: 33px;
 }
 
-.strength::after{
+.special .strength::after{
     content: "4";
     bottom: -11px;
     left: 56px; 
 }
 
-.perception{
+.special .perception{
     position: absolute;
     z-index: 2;
     left: 112px;
@@ -149,18 +162,18 @@ svg,.letter:before{
     font-size: 160px;
 }
 
-.perception::before{
+.special .perception::before{
     bottom: -15px;
     left: 40px;
 }
 
-.perception::after{
+.special .perception::after{
     content: "9";
     bottom: -6px;
     left: 63px; 
 }
 
-.endurance{
+.special .endurance{
     position: absolute;
     z-index: 3;
     left: 233px;
@@ -172,18 +185,18 @@ svg,.letter:before{
     right: 25px;
 }
 
-.endurance::before{
+.special .endurance::before{
     bottom: -10px;
     left: 34px;
 }
 
-.endurance::after{
+.special .endurance::after{
     content: "3";
     bottom: -3px;
     left: 57px; 
 }
 
-.charisma{
+.special .charisma{
     position: absolute;
     left: 344px;
     bottom: 20px;
@@ -197,18 +210,18 @@ svg,.letter:before{
     top: 0px;
 }
 
-.charisma::before{
+.special .charisma::before{
     bottom: -23px;
     left: 44px;
 }
 
-.charisma::after{
+.special .charisma::after{
     content: "5";
     bottom: -13px;
     left: 66px; 
 }
 
-.intelligence{
+.special .intelligence{
     position: absolute;
     left: 463px;
     z-index: 5;
@@ -221,18 +234,18 @@ svg,.letter:before{
     top: -21px;
 }
 
-.intelligence::before{
+.special .intelligence::before{
     bottom: -19px;
     left: 40px;
 }
 
-.intelligence::after{
+.special .intelligence::after{
     content: "7";
     bottom: -10px;
     left: 63px; 
 }
 
-.agility{
+.special .agility{
     position: absolute;
     left: 583px;
     bottom: 33px;
@@ -246,18 +259,18 @@ svg,.letter:before{
     right: 25px;
 }
 
-.agility::before{
+.special .agility::before{
     bottom: -22px;
     left: 32px;
 }
 
-.agility::after{
+.special .agility::after{
     content: "7";
     bottom: -14px;
     left: 57px; 
 }
 
-.luck{
+.special .luck{
     position: absolute;
     left: 705px;
     top: 16px;
@@ -271,12 +284,12 @@ svg,.letter:before{
     bottom: -15px;
 }
 
-.luck::before{
+.special .luck::before{
     bottom: -15px;
     left: 27px;
 }
 
-.luck::after{
+.special .luck::after{
     content: "8";
     bottom: -7px;
     left: 50px; 
@@ -292,41 +305,15 @@ svg,.letter:before{
     bottom: 3px;
     user-select: none;
 }
+/* End Navbar */
 
 
-.container{
-    display: grid;
+/* Début Elements principaux */
+main{
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    grid-template-columns: repeat(auto-fill, 300px);
-    max-width: 1000px;
-    gap: 30px 50px;
-    padding: 40px 0;
-    color: var(--clr-text);
-}
-
-
-.container-item{
-    background: rgb(235, 235, 235);
-    height: 300px;
-    border-radius: 20px;
-    border: 2px solid black;
-    box-shadow: 6px 4px 1px 1px black;
-    font-family: "Chowderhead";
-    letter-spacing: 5px;
-    font-size: 27px;
-}
-
-.container-item::first-letter{
-    font-family: "Kiddie Cocktails ITC Std";
-    font-size: 100px;
-    margin-left: 20px;
-}
-
-
-.container-item:hover{
-    background: rgb(255, 255, 255);
+    color: white;
 }
 
 footer{
@@ -335,4 +322,255 @@ footer{
     align-items: center;
     height: 30px;
     background: #000;
+}
+
+/* Fin Elements principaux */
+
+
+/*  Début Header Hero*/
+
+.ctn-hero-box{
+    position: relative;
+    display: flex;
+    width: 500px;
+    min-width: 300px;
+}
+
+.ctn-hero-bg {
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgba(253, 253, 253, 0.308), rgba(0, 0, 0, 0.562));
+    backdrop-filter: blur(6px);
+}
+
+.ctn-hero {
+    position: relative;
+    width: inherit;
+    height: 100%;
+    background: #00000021;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black
+}
+
+.ctn-hero span{
+    position: relative;
+    display: block;
+    color: #d8d8d8;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+
+.ctn-hero h1 {
+    font-size: 2.7em;
+    padding-bottom: 10px;
+}
+
+.ctn-hero hr{
+    color: red;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 10px 0;
+}
+
+.ctn-hero p{
+    width: 330px;
+    min-width: 100px;
+    font-size: 1.5em;
+    padding: 20px 0;
+}
+
+.ctn-hero img{
+    float: right;
+    width: 200px;
+    user-select: none;
+    pointer-events: none;
+    transform: translateY(20px);
+    z-index: 1;
+}
+
+
+.ctn-buttons{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+button {
+    display: block;
+    cursor: pointer;
+    background: #8f8f8f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-weight: 600;
+    color: white;
+    box-shadow: 1px 1px 1px 0px black;
+}
+
+
+button:hover{
+    background: #a7a7a7;
+    animation: background 0.2s ease-in;
+}
+
+/*  Fin Header Hero*/
+
+
+
+.ctn-card{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    aspect-ratio: 10/13.9;
+    background: rgba(244,237,223,255);
+    border-radius: 20px;
+    border: 3px solid rgb(80, 80, 80);
+    margin: 100px;
+    font-family: "Chowderhead";
+    color: #323232;
+
+}
+
+.card-item{
+    position: relative;
+    height: calc(100% - 7px);
+    width: calc(100% - 8px);
+    border-radius: 16px;
+}
+
+.card-header{
+    position: relative;
+    height: 40px;
+    background: rgba(132,167,130,255);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.card-header::before{
+    position: absolute;
+    height: 40px;
+    width: 6px;
+    background: rgba(132,167,130,255);
+}
+
+.card-header-point-ctn{
+    position: relative;
+    height: 70px;
+    aspect-ratio: 1/1;
+    background: rgb(80, 80, 80);
+    border-radius: 15px;
+    top:50%;
+    transform: translate(calc(50% - 60.5px), -50%);
+    z-index: -1;
+}
+
+.card-header-point{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 57px;
+    aspect-ratio: 1/1;
+    transform: translate(calc(-50% + 9px), -50%);
+    background: rgba(241,226,193,255);
+    border: 6px solid rgba(126,158,111,255);
+    outline: 4px solid rgba(244,237,223,255);
+    outline-offset:  -1px;
+    border-radius: 10px;
+    top:50%;
+    z-index: 2;
+    font-size: 46px;
+    color: #323232;
+}
+
+.card-header-point::after{
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    position: inherit;
+    content: 'BANDOLIER';
+    height: 40px;
+    width: 227px;
+    background: rgba(132,167,130,255);
+    left: 47px;
+    bottom: 2.5px;
+    font-size: 27px;
+    color: #f5f4de;
+    font-family: 'Roboto';
+}
+
+.card-image img{
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.card-section{
+    display: flex;
+    flex-direction: column;
+    background: #ece9d6;
+    border: 4px solid #323234;
+    border-radius: 10px;
+    justify-content: center;
+    height: 137px;
+    box-shadow: 
+        inset 0px 2px 20px 0px rgb(0 0 0 / 38%),
+        inset 0px -14px 20px 0px rgb(155 155 155 / 77%)
+}
+
+.card-section-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+    padding: 0 17px;
+    font-size: 17px;
+}
+
+.card-section-footer{
+    position: relative;
+    height: 70px;
+    font-family: 'Kiddie Cocktails ITC Std';
+}
+
+.card-section-footer .letter{
+    position: absolute;
+    top: -47px;
+    left: -47px;
+    transform: scale(0.3);
+}
+
+.card-section-footer img{
+    position: absolute;
+    top: 7px;
+    height: 35px;
+    right: -5px;
+    
+}
+.card-footer-level{
+    display: flex;
+    position: absolute;
+    align-items: flex-end;
+    font-family: "Chowderhead";
+    bottom: 0;
+    right: 10px;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-footer-level span{
+    font-size: 25px;
+    line-height: 22px;
+    font-weight: 700;
 }

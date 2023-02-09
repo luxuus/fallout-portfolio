@@ -724,3 +724,14 @@ button:hover{
     line-height:var(--card-section-footer-span--lh);
     font-weight: 500;
 }
+
+.ctn-list--cards div{
+    position: relative;
+}
+
+.card-strength{
+    position: absolute;
+    inset: 0;
+    width: 180px;
+    left: 20px;
+}

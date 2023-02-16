@@ -451,7 +451,7 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
 }
 
 
@@ -727,7 +727,27 @@ button:hover{
 
 .ctn-list--cards div{
     position: relative;
+    transition: transform 0.2s ease-out;
 }
+
+
+
+
+.ctn-list--cards > div > img{
+    width: 200px; 
+}
+
+
+
+.card-svg #rect4022{
+    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255)) 
+            drop-shadow(-1px -1px 1px rgb(255, 255, 255));
+}
+
+.card-svg #path1048{
+    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));;
+}
+
 
 .card-strength{
     position: absolute;

@@ -22,7 +22,7 @@ body{
     background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
     background-size: 40px 100%;
     font-family: 'Roboto',sans-serif;
-    box-shadow: inset 7px -14px 20px 18px #000000;
+    box-shadow: inset 0px -4px 20px 8px #000000;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -448,10 +448,11 @@ button:hover{
 /*  Fin Header Hero*/
 
 .ctn-list--cards{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 100px;
 }
 
 
@@ -540,6 +541,7 @@ button:hover{
     --card-section-footer-span--gap: calc(var(--card-height) * 0.015);
     --card-section-footer-span--ls: calc(var(--card-height) * 0.00125);
 
+    --card-svg-drop-shadow: rgb(170, 172, 97);
 }
 
 
@@ -730,9 +732,6 @@ button:hover{
     transition: transform 0.2s ease-out;
 }
 
-
-
-
 .ctn-list--cards > div > img{
     width: 200px; 
 }
@@ -740,18 +739,112 @@ button:hover{
 
 
 .card-svg #rect4022{
-    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255)) 
-            drop-shadow(-1px -1px 1px rgb(255, 255, 255));
+    filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow)) 
+            drop-shadow(-1px -1px 1px var(--card-svg-drop-shadow))
+            drop-shadow(2px -2px 1px rgb(0 0 0 / 0.4));
 }
+
+
 
 .card-svg #path1048{
-    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));;
+    filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow))
+    drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+}
+
+.card-svg #path1037{
+    filter: drop-shadow(-1px 1px 1px var(--card-svg-drop-shadow));
 }
 
 
+.ctn-list--perks{
+    position: relative;
+}
+
+.ctn-perk{
+    display: inline-block;
+    position: relative;
+    height: 330px;
+    width: 250px;
+}
+
+.ctn-perk .perk-strength{
+    position: relative;
+    z-index: 1;
+    width: 250px;
+    height: 285px;
+    overflow: hidden;
+}
+
 .card-strength{
+    position: relative;
+    top: 30px;
+    left: 29px;
+    width: 183px;
+    user-select: none;
+}
+
+.card-svg#svg5,
+.card-svg#svg6{
+    position: absolute;
+}
+
+.card-svg#svg6{
+    z-index: 2;
+}
+
+.ctn-perk::before{
+    content: "";
     position: absolute;
     inset: 0;
-    width: 180px;
-    left: 20px;
+    top: 234px;
+    left: 43px;
+    z-index: 3;
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-family: 'Kiddie Cocktails ITC Std';
+    letter-spacing: 2px;
+    -webkit-text-fill-color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 2px;
+}
+
+
+  
+.ctn-perk-letter{
+    width: 56px;
+    position: absolute;
+    bottom: 33px;
+    left: 42px;
+    z-index: 10;
+
+    fill: rgb(0, 0, 0);
+    font-family: "Kiddie Cocktails ITC Std";
+    stroke: rgb(255, 255, 255);
+    stroke-width: 5px;
+    stroke-linejoin: round;
+    paint-order: stroke;
+    font-size:100px;
+}
+
+
+  
+.ctn-perk-name{
+    width: 131px;
+    height: 40px;
+    position: absolute;
+    bottom: 43px;
+    left: 74px;
+    z-index: 10;
+
+    fill: rgb(0, 0, 0);
+    font-family: "Chowderhead";
+    stroke: rgb(255, 255, 255);
+    stroke-width: 5px;
+    stroke-linejoin: round;
+    paint-order: stroke;
+    font-size:58px;
+    letter-spacing: 5px;
+}
+
+.perk-name{
+    width: 100%;
 }

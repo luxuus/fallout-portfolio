@@ -758,6 +758,10 @@ button:hover{
 
 .ctn-list--perks{
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .ctn-perk{
@@ -767,7 +771,7 @@ button:hover{
     width: 250px;
 }
 
-.ctn-perk .perk-strength{
+.ctn-perk .ctn-perk-img{
     position: relative;
     z-index: 1;
     width: 250px;
@@ -775,47 +779,61 @@ button:hover{
     overflow: hidden;
 }
 
-.card-strength{
-    position: relative;
-    top: 30px;
-    left: 29px;
-    width: 183px;
-    user-select: none;
-}
-
-.card-svg#svg5,
-.card-svg#svg6{
+.card-svg#bg,
+.card-svg#fg{
     position: absolute;
 }
 
-.card-svg#svg6{
+.card-svg#fg{
     z-index: 2;
 }
 
-.ctn-perk::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    top: 234px;
-    left: 43px;
-    z-index: 3;
-    color: rgb(255, 255, 255);
-    font-size: 60px;
-    font-family: 'Kiddie Cocktails ITC Std';
-    letter-spacing: 2px;
-    -webkit-text-fill-color: rgb(0, 0, 0);
-    -webkit-text-stroke-width: 2px;
+.perk-img{
+    position: relative;
+    user-select: none;
+}
+
+.perk-img.strength{
+    top: 30px;
+    left: 29px;
+    width: 183px;
+}
+.perk-img.perception{
+    top: 30px;
+    left: 39px;
+    width: 181px;
+}
+.perk-img.endurance{
+    top: 30px;
+    left: 29px;
+    width: 183px;
+}
+.perk-img.charisma{
+    top: 30px;
+    left: 29px;
+    width: 183px;
+}
+.perk-img.intelligence{
+    top: 30px;
+    left: 29px;
+    width: 183px;
+}
+.perk-img.agility{
+    top: 30px;
+    left: 29px;
+    width: 183px;
+}
+.perk-img.luck{
+    top: 30px;
+    left: 29px;
+    width: 183px;
 }
 
 
-  
-.ctn-perk-letter{
-    width: 56px;
-    position: absolute;
-    bottom: 33px;
-    left: 42px;
-    z-index: 10;
 
+.perk-letter{
+    position: absolute;
+    z-index: 10;
     fill: rgb(0, 0, 0);
     font-family: "Kiddie Cocktails ITC Std";
     stroke: rgb(255, 255, 255);
@@ -825,26 +843,55 @@ button:hover{
     font-size:100px;
 }
 
+.perk-letter.strength{
+    width: 56px;
+    inset: auto auto 33px 42px;
+}
+.perk-letter.perception{
+    width: 56px;
+    inset: auto auto 37px 50px;
+}
+.perk-letter.endurance{
+    width: 56px;
+    inset: auto auto 33px 42px;
+}
+.perk-letter.charisma{
+    width: 56px;
+    inset: auto auto 33px 42px;
+}.perk-letter.intelligence{
+    width: 56px;
+    inset: auto auto 33px 42px;
+}.perk-letter.agility{
+    width: 56px;
+    inset: auto auto 33px 42px;
+}.perk-letter.luck{
+    width: 56px;
+    inset: auto auto 33px 42px;
+}
 
-  
-.ctn-perk-name{
-    width: 131px;
-    height: 40px;
+.perk-name{
     position: absolute;
-    bottom: 43px;
-    left: 74px;
-    z-index: 10;
-
-    fill: rgb(0, 0, 0);
     font-family: "Chowderhead";
+    fill: rgb(0, 0, 0);
     stroke: rgb(255, 255, 255);
     stroke-width: 5px;
     stroke-linejoin: round;
     paint-order: stroke;
-    font-size:58px;
-    letter-spacing: 5px;
+    z-index: 10;
+    font-size:58px;   
 }
 
-.perk-name{
-    width: 100%;
+.perk-name.strength{
+    width: 131px;
+    height: 40px;
+    bottom: 43px;
+    left: 74px;
+    letter-spacing: 5px;
+}
+.perk-name.perception{
+    width: 156px;
+    height: 36px;
+    bottom: 46px;
+    left: 61px;
+    letter-spacing: 5px;
 }

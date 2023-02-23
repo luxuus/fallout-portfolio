@@ -775,7 +775,7 @@ button:hover{
     position: relative;
     z-index: 1;
     width: 250px;
-    height: 285px;
+    height: 271px;
     overflow: hidden;
 }
 
@@ -804,29 +804,30 @@ button:hover{
     width: 181px;
 }
 .perk-img.endurance{
-    top: 30px;
-    left: 29px;
-    width: 183px;
+    top: 13px;
+    left: 5px;
+    width: 212px;
 }
 .perk-img.charisma{
-    top: 30px;
-    left: 29px;
-    width: 183px;
+    top: 39px;
+    left: -3px;
+    width: 233px;
 }
 .perk-img.intelligence{
     top: 30px;
-    left: 29px;
-    width: 183px;
+    left: 27px;
+    width: 169px;
 }
 .perk-img.agility{
-    top: 30px;
+    top: 60px;
     left: 29px;
     width: 183px;
 }
+
 .perk-img.luck{
-    top: 30px;
-    left: 29px;
-    width: 183px;
+    top: 27px;
+    left: 13px;
+    width: 202px;
 }
 
 
@@ -849,24 +850,25 @@ button:hover{
 }
 .perk-letter.perception{
     width: 56px;
-    inset: auto auto 37px 50px;
+    inset: auto auto 37px 44px;
 }
 .perk-letter.endurance{
     width: 56px;
-    inset: auto auto 33px 42px;
+    inset: auto auto 32px 35px;
 }
 .perk-letter.charisma{
     width: 56px;
-    inset: auto auto 33px 42px;
+    font-size: 109px;
+    inset: auto auto 44px 40px;
 }.perk-letter.intelligence{
     width: 56px;
-    inset: auto auto 33px 42px;
+    inset: auto auto 39px 41px;
 }.perk-letter.agility{
     width: 56px;
-    inset: auto auto 33px 42px;
+    inset: auto auto 30px 38px;
 }.perk-letter.luck{
     width: 56px;
-    inset: auto auto 33px 42px;
+    inset: auto auto 33px 40px;
 }
 
 .perk-name{
@@ -895,3 +897,40 @@ button:hover{
     left: 61px;
     letter-spacing: 5px;
 }
+.perk-name.endurance{
+    width: 156px;
+    height: 36px;
+    bottom: 44px;
+    left: 54px;
+    letter-spacing: 10px;
+}
+.perk-name.charisma{
+    width: 156px;
+    height: 36px;
+    bottom: 55px;
+    left: 58px;
+    letter-spacing: 10px;
+}
+.perk-name.intelligence{
+    width: 156px;
+    height: 34px;
+    bottom: 52px;
+    left: 50px;
+    letter-spacing: 0px;
+}
+
+.perk-name.agility{
+    width: 156px;
+    height: 36px;
+    bottom: 45px;
+    left: 59px;
+    letter-spacing: 17px;
+}
+.perk-name.luck{
+    width: 156px;
+    height: 36px;
+    bottom: 43px;
+    left: 60px;
+    letter-spacing: 17px;
+}
+

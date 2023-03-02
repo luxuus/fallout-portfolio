@@ -721,22 +721,18 @@ button:hover{
     width: 200px; 
 }
 
-
-
-.card-svg #rect4022{
+.ctn-perk:hover .card-svg #rect4022{
     filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow)) 
-            drop-shadow(-1px -1px 1px var(--card-svg-drop-shadow))
-            drop-shadow(2px -2px 1px rgb(0 0 0 / 0.4));
+    drop-shadow(-1px -1px 1px var(--card-svg-drop-shadow))
+    drop-shadow(2px -2px 1px rgb(0 0 0 / 0.4));
 }
 
-
-
-.card-svg #path1048{
+.ctn-perk:hover .card-svg #path1048{
     filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow))
     drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
 }
 
-.card-svg #path1037{
+.ctn-perk:hover .card-svg #path1037{
     filter: drop-shadow(-1px 1px 1px var(--card-svg-drop-shadow));
 }
 
@@ -756,12 +752,14 @@ button:hover{
     position: relative;
     height: 330px;
     width: 250px;
-    opacity: 0.5;
+    opacity: 0.8;
+    filter: grayscale(1);
     transition: all 0.1s ease-out;
 }
 
 .ctn-perk:hover{
     opacity: 1;
+    filter: none;
 }
 
 .ctn-perk .ctn-perk-img{

@@ -1,6 +1,8 @@
 @font-face {font-family: "Kiddie Cocktails ITC Std";src: url("Kiddie-Cocktails-ITC-Std-Regular.ttf");}
 @font-face {font-family: "Chowderhead";src: url("Chowderhead-Medium.ttf")}
 @font-face {font-family: "Roboto";src: url("Roboto.ttf")}
+@font-face {font-family: "Brush Script";src: url("Brush-Script.ttf")}
+
 
 /* Reset CSS */
 *{
@@ -15,17 +17,48 @@ html{
     scroll-behavior: smooth;
 }
 
+
 body{
+    position: relative;
+    z-index: 1;
+}
+
+.main-layer{
+    position: relative;
     color: var(--clr-primary);
-    background-color: #325989;
-    background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
-    background-size: 40px 100%;
+    /* background-color: #325989; */
+    /* background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 ); */
+    /* background-size: 40px 100%; */
+
+    
     font-family: 'Roboto',sans-serif;
     box-shadow: inset 0px -4px 20px 8px #000000;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    backdrop-filter: blur(10px);
+    z-index: 3;
+}
+
+
+.background-layer{
+    background-color: #000;
+    background: url("img/minimalist-wallpaper-fallout-new-vegas.jpg") no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 2;
+}
+
+.background-layer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
 }
 
 
@@ -35,9 +68,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
-
-
 
 .special{
     padding: 20px 0;
@@ -47,7 +79,13 @@ header{
     position: relative;
     font-family: 'Kiddie Cocktails ITC Std';
     transform: scale(0.85);
-    
+}
+
+.header-hero{
+    position: relative;
+    font-family: "Brush Script";
+    color: #ffde67;
+    font-size: 70px;
 }
 
 .letter a,

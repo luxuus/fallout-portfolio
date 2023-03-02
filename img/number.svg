@@ -2,14 +2,14 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="106.68668"
-   height="76.577621"
-   viewBox="0 0 28.227517 20.261162"
+   width="106.687"
+   height="76.57785"
+   viewBox="0 0 28.2276 20.261223"
    version="1.1"
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="special.svg"
+   sodipodi:docname="number.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,24 +25,20 @@
      inkscape:document-units="px"
      showgrid="false"
      showguides="false"
-     inkscape:zoom="1.0544998"
-     inkscape:cx="1270.2705"
-     inkscape:cy="222.85448"
+     inkscape:zoom="2.9825758"
+     inkscape:cx="156.40843"
+     inkscape:cy="19.110998"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" /><defs
-     id="defs2" /><g
-     inkscape:label="Calque 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     style="display:inline"
-     transform="translate(-18.786665,-78.001166)"><ellipse
-       style="display:inline;fill:#f2f5e0;fill-opacity:1;stroke:#000000;stroke-width:0.797512;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
-       id="path4622"
-       cx="32.900425"
-       cy="88.131744"
-       rx="13.715004"
-       ry="9.7318249" /></g></svg>
+     inkscape:current-layer="svg5" /><defs
+     id="defs2" /><ellipse
+     style="display:inline;fill:#f2f5e0;fill-opacity:1;stroke:#000000;stroke-width:0.797512;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+     id="path4622"
+     cx="32.900425"
+     cy="88.131744"
+     rx="13.715004"
+     ry="9.7318249"
+     transform="translate(-18.786665,-78.001166)" /></svg>

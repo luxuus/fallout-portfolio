@@ -18,7 +18,6 @@ html{
 body{
     color: var(--clr-primary);
     background-color: #325989;
-    opacity: 1;
     background-image: linear-gradient(to right, #3d6898, #3d6898 20px, #325989 20px, #325989 );
     background-size: 40px 100%;
     font-family: 'Roboto',sans-serif;
@@ -60,7 +59,7 @@ header{
 }
 
 .special .letter:not(:last-child):before{
-    content: url("data:image/svg+xml,%3Csvg width='65.755386' height='46.653492' viewBox='0 0 65.755388 46.653494' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cellipse style='fill:%23f2f5e0;stroke:%23000000;stroke-width:2.13165;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;paint-order:markers fill stroke' id='path120' ry='22.26092' rx='31.811867' cy='23.326744' cx='32.877693' /%3E%3C/svg%3E%0A");
+    content: url("data:image/svg+xml;utf8 ,<svg width='65.755386' height='46.653492' viewBox='0 0 65.755388 46.653494' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'><ellipse style='fill:%23f2f5e0;stroke:%23000000;stroke-width:2.13165;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;paint-order:markers fill stroke' id='path120' ry='22.26092' rx='31.811867' cy='23.326744' cx='32.877693' /></svg>");
     position: absolute;
     transform-origin: left;
     z-index: 10;
@@ -545,20 +544,6 @@ button:hover{
 }
 
 
-/* main img{
-    position: absolute;
-    opacity: 0.2;
-}
-
-.nav-card{
-    position: relative;
-    left: 30px;
-    bottom: 10px;
-    opacity: 0.5;
-} */
-
-
-
 /* Début CSS */
 .ctn-card{
     display: flex;
@@ -761,14 +746,22 @@ button:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
+
+
 
 .ctn-perk{
     display: inline-block;
     position: relative;
     height: 330px;
     width: 250px;
+    opacity: 0.5;
+    transition: all 0.1s ease-out;
+}
+
+.ctn-perk:hover{
+    opacity: 1;
 }
 
 .ctn-perk .ctn-perk-img{
@@ -830,7 +823,61 @@ button:hover{
     width: 202px;
 }
 
+.ctn-perk#perk-strength:hover .ctn-perk-img{
+    background: top 30px left 29px / 183px auto url(img/FO76_vaultboy_strength.webp) no-repeat;
+}
 
+.ctn-perk#perk-strength .ctn-perk-img{
+    background: top 30px left 29px / 183px auto url(static/strength/frame_02_delay-0.84s.png) no-repeat;
+}
+
+.ctn-perk#perk-perception:hover .ctn-perk-img{
+    background: top 30px left 29px / 181px auto url(img/FO76_vaultboy_perception.webp) no-repeat;
+}
+
+.ctn-perk#perk-perception .ctn-perk-img{
+    background: top 30px left 29px / 181px auto url(static/perception/frame_02_delay-0.3s.png) no-repeat;
+}
+
+.ctn-perk#perk-endurance:hover .ctn-perk-img{
+    background: top 13px left 5px / 212px auto url(img/FO76_vaultboy_endurance.webp) no-repeat;
+}
+
+.ctn-perk#perk-endurance .ctn-perk-img{
+    background: top 13px left 5px / 212px auto url(static/endurance/frame_02_delay-0.45s.png) no-repeat;
+}
+
+.ctn-perk#perk-charisma:hover .ctn-perk-img{
+    background: top 39px left -3px / 233px auto url(img/FO76_vaultboy_charisma.webp) no-repeat;
+}
+
+.ctn-perk#perk-charisma .ctn-perk-img{
+    background: top 39px left -3px / 233px auto url(static/charisma/frame_15_delay-0.63s.png) no-repeat;
+}
+
+.ctn-perk#perk-intelligence:hover .ctn-perk-img{
+    background: top 30px left 27px / 169px auto url(img/FO76_vaultboy_intelligence.webp) no-repeat;
+}
+
+.ctn-perk#perk-intelligence .ctn-perk-img{
+    background: top 30px left 27px / 169px auto url(static/intelligence/frame_03_delay-0.06s.png) no-repeat;
+}
+
+.ctn-perk#perk-agility:hover .ctn-perk-img{
+    background: top 60px left 29px / 183px auto url(img/FO76_vaultboy_agility.webp) no-repeat;
+}
+
+.ctn-perk#perk-agility .ctn-perk-img{
+    background: top 60px left 29px / 183px auto url(static/agility/frame_02_delay-0.48s.png) no-repeat;
+}
+
+.ctn-perk#perk-luck:hover .ctn-perk-img{
+    background: top 27px left 13px / 202px auto url(img/FO76_vaultboy_luck.webp) no-repeat;
+}
+
+.ctn-perk#perk-luck .ctn-perk-img{
+    background: top 27px left 13px / 202px auto url(static/luck/frame_23_delay-0.03s.png) no-repeat;
+}
 
 .perk-letter{
     position: absolute;

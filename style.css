@@ -837,6 +837,8 @@ button:hover{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background: linear-gradient(to left, transparent, #ffffff1c, transparent);
+    border-top: 2px solid #ffffff2e;
 }
 
 
@@ -846,6 +848,7 @@ button:hover{
     text-indent: 3em;
     text-align: justify;
     font-family: 'Roboto';
+    padding: 20px;
 }
 
 .ctn-perk{

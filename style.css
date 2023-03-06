@@ -21,6 +21,7 @@ html{
 body{
     position: relative;
     z-index: 1;
+    background: var(--main-background);
 }
 
 .main-layer{
@@ -49,7 +50,8 @@ body{
     background-size: cover;
     background-position-x: right;
     position: absolute;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     inset: 0;
     z-index: 2;
 }
@@ -542,7 +544,7 @@ button:hover{
     --clr-primary: #f1f1f1;
     --clr-text: black;
     --bg-primary: #0d0f12;
-
+    --main-background: #c59160;
 
     /* Specific Card Variables*/
     --card-clr-strength__background: #82a884;

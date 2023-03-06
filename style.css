@@ -66,37 +66,37 @@ body{
 
 @media (max-width: 900px){
     header{
-        transform: scale(0.9);
+        transform: scale(0.85) translateY(-30px);
     }
 }
 @media (max-width: 800px){
     header{
-        transform: scale(0.75);
+        transform: scale(0.75) translateY(-60px);
     }
 }
 @media (max-width: 700px){
     header{
-        transform: scale(0.65);
+        transform: scale(0.65) translateY(-80px);
     }
 }
 @media (max-width: 600px){
     header{
-        transform: scale(0.55);
+        transform: scale(0.55) translateY(-80px);
     }
 }
 @media (max-width: 500px){
     header{
-        transform: scale(0.45);
+        transform: scale(0.45) translateY(-100px);
     }
 }
 @media (max-width: 400px){
     header{
-        transform: scale(0.35);
+        transform: scale(0.35) translateY(-120px);
     }
 }
 @media (max-width: 300px){
     header{
-        transform: scale(0.25);
+        transform: scale(0.25) translateY(-140px);
     }
 }
 
@@ -108,6 +108,7 @@ header{
     align-items: center;
     flex-direction: column;
     width: fit-content;
+    transition: all 0.2s ease-out;
 }
 
 .special{
@@ -430,8 +431,8 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30px;
-    background: #000;
+    height: 70px;
+    width: 100%;
 }
 
 /* Fin Elements principaux */
@@ -825,12 +826,27 @@ button:hover{
 .ctn-list--perks{
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.ctn-perk-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
+.ctn-perk-desc{
+    max-width: 1000px;
+    font-size: 1.5em;
+    text-indent: 3em;
+    text-align: justify;
+    font-family: 'Roboto';
+}
 
 .ctn-perk{
     display: inline-block;

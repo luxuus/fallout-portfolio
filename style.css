@@ -49,7 +49,7 @@ body{
     background: url("img/minimalist-wallpaper-fallout-new-vegas.jpg") no-repeat;
     background-size: cover;
     background-position-x: right;
-    position: absolute;
+    position: fixed;
     min-height: 100vh;
     max-height: 100%;
     inset: 0;

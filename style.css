@@ -45,8 +45,10 @@ body{
 
 
 .background-layer{
-    background-color: #000;
-    background: url("img/minimalist-wallpaper-fallout-new-vegas.jpg") no-repeat;
+    background-color: #325989;
+
+    /* background-color: #000; */
+    /* background: url("img/minimalist-wallpaper-fallout-new-vegas.jpg") no-repeat; */
     background-size: cover;
     background-position-x: right;
     position: fixed;
@@ -87,6 +89,12 @@ body{
 @media (max-width: 500px){
     header{
         transform: scale(0.45) translateY(-100px);
+    }
+
+    .ctn-perk-box{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 }
 @media (max-width: 400px){
@@ -807,18 +815,18 @@ button:hover{
     width: 200px; 
 }
 
-.ctn-perk:hover .card-svg #rect4022{
+.ctn-perk-box:hover .card-svg #rect4022{
     filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow)) 
     drop-shadow(-1px -1px 1px var(--card-svg-drop-shadow))
     drop-shadow(2px -2px 1px rgb(0 0 0 / 0.4));
 }
 
-.ctn-perk:hover .card-svg #path1048{
+.ctn-perk-box:hover .card-svg #path1048{
     filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow))
     drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
 }
 
-.ctn-perk:hover .card-svg #path1037{
+.ctn-perk-box:hover .card-svg #path1037{
     filter: drop-shadow(-1px 1px 1px var(--card-svg-drop-shadow));
 }
 
@@ -829,41 +837,97 @@ button:hover{
     justify-content: center;
     gap: 50px;
     flex-direction: column;
-    padding: 40px;
 }
 
 .ctn-perk-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    
     background: linear-gradient(to left, transparent, #ffffff1c, transparent);
+    border: 1px solid transparent;
     border-top: 2px solid #ffffff2e;
+    padding: 25px;
+    max-width: 1200px;
 }
 
-
 .ctn-perk-desc{
-    max-width: 1000px;
+    display: inline;
     font-size: 1.5em;
     text-indent: 3em;
     text-align: justify;
     font-family: 'Roboto';
-    padding: 20px;
 }
 
 .ctn-perk{
-    display: inline-block;
     position: relative;
+    float: left;
     height: 330px;
     width: 250px;
     opacity: 0.8;
     filter: grayscale(1);
     transition: all 0.1s ease-out;
+    shape-outside:polygon(21% 9%, 12% 90%, 82% 90%, 86% 9%);
+    shape-margin: 23px;
+    /* clip-path: polygon(21% 14%, 12% 92%, 76% 90%, 81% 8%) */
 }
 
-.ctn-perk:hover{
+.ctn-perk-box:hover .ctn-perk {
     opacity: 1;
     filter: none;
+}
+
+.ctn-perk#perk-strength:hover .ctn-perk-img{
+    background: top 30px left 29px / 183px auto url(img/FO76_vaultboy_strength.webp) no-repeat;
+}
+
+.ctn-perk#perk-strength .ctn-perk-img{
+    background: top 30px left 29px / 183px auto url(static/strength/frame_02_delay-0.84s.png) no-repeat;
+}
+
+.ctn-perk#perk-perception:hover .ctn-perk-img{
+    background: top 30px left 29px / 181px auto url(img/FO76_vaultboy_perception.webp) no-repeat;
+}
+
+.ctn-perk#perk-perception .ctn-perk-img{
+    background: top 30px left 29px / 181px auto url(static/perception/frame_02_delay-0.3s.png) no-repeat;
+}
+
+.ctn-perk#perk-endurance:hover .ctn-perk-img{
+    background: top 13px left 5px / 212px auto url(img/FO76_vaultboy_endurance.webp) no-repeat;
+}
+
+.ctn-perk#perk-endurance .ctn-perk-img{
+    background: top 13px left 5px / 212px auto url(static/endurance/frame_02_delay-0.45s.png) no-repeat;
+}
+
+.ctn-perk#perk-charisma:hover .ctn-perk-img{
+    background: top 39px left -3px / 233px auto url(img/FO76_vaultboy_charisma.webp) no-repeat;
+}
+
+.ctn-perk#perk-charisma .ctn-perk-img{
+    background: top 39px left -3px / 233px auto url(static/charisma/frame_15_delay-0.63s.png) no-repeat;
+}
+
+.ctn-perk#perk-intelligence:hover .ctn-perk-img{
+    background: top 30px left 27px / 169px auto url(img/FO76_vaultboy_intelligence.webp) no-repeat;
+}
+
+.ctn-perk#perk-intelligence .ctn-perk-img{
+    background: top 30px left 27px / 169px auto url(static/intelligence/frame_03_delay-0.06s.png) no-repeat;
+}
+
+.ctn-perk#perk-agility:hover .ctn-perk-img{
+    background: top 60px left 29px / 183px auto url(img/FO76_vaultboy_agility.webp) no-repeat;
+}
+
+.ctn-perk#perk-agility .ctn-perk-img{
+    background: top 60px left 29px / 183px auto url(static/agility/frame_02_delay-0.48s.png) no-repeat;
+}
+
+.ctn-perk#perk-luck:hover .ctn-perk-img{
+    background: top 27px left 13px / 202px auto url(img/FO76_vaultboy_luck.webp) no-repeat;
+}
+
+.ctn-perk#perk-luck .ctn-perk-img{
+    background: top 27px left 13px / 202px auto url(static/luck/frame_23_delay-0.03s.png) no-repeat;
 }
 
 .ctn-perk .ctn-perk-img{
@@ -925,61 +989,7 @@ button:hover{
     width: 202px;
 }
 
-.ctn-perk#perk-strength:hover .ctn-perk-img{
-    background: top 30px left 29px / 183px auto url(img/FO76_vaultboy_strength.webp) no-repeat;
-}
 
-.ctn-perk#perk-strength .ctn-perk-img{
-    background: top 30px left 29px / 183px auto url(static/strength/frame_02_delay-0.84s.png) no-repeat;
-}
-
-.ctn-perk#perk-perception:hover .ctn-perk-img{
-    background: top 30px left 29px / 181px auto url(img/FO76_vaultboy_perception.webp) no-repeat;
-}
-
-.ctn-perk#perk-perception .ctn-perk-img{
-    background: top 30px left 29px / 181px auto url(static/perception/frame_02_delay-0.3s.png) no-repeat;
-}
-
-.ctn-perk#perk-endurance:hover .ctn-perk-img{
-    background: top 13px left 5px / 212px auto url(img/FO76_vaultboy_endurance.webp) no-repeat;
-}
-
-.ctn-perk#perk-endurance .ctn-perk-img{
-    background: top 13px left 5px / 212px auto url(static/endurance/frame_02_delay-0.45s.png) no-repeat;
-}
-
-.ctn-perk#perk-charisma:hover .ctn-perk-img{
-    background: top 39px left -3px / 233px auto url(img/FO76_vaultboy_charisma.webp) no-repeat;
-}
-
-.ctn-perk#perk-charisma .ctn-perk-img{
-    background: top 39px left -3px / 233px auto url(static/charisma/frame_15_delay-0.63s.png) no-repeat;
-}
-
-.ctn-perk#perk-intelligence:hover .ctn-perk-img{
-    background: top 30px left 27px / 169px auto url(img/FO76_vaultboy_intelligence.webp) no-repeat;
-}
-
-.ctn-perk#perk-intelligence .ctn-perk-img{
-    background: top 30px left 27px / 169px auto url(static/intelligence/frame_03_delay-0.06s.png) no-repeat;
-}
-
-.ctn-perk#perk-agility:hover .ctn-perk-img{
-    background: top 60px left 29px / 183px auto url(img/FO76_vaultboy_agility.webp) no-repeat;
-}
-
-.ctn-perk#perk-agility .ctn-perk-img{
-    background: top 60px left 29px / 183px auto url(static/agility/frame_02_delay-0.48s.png) no-repeat;
-}
-
-.ctn-perk#perk-luck:hover .ctn-perk-img{
-    background: top 27px left 13px / 202px auto url(img/FO76_vaultboy_luck.webp) no-repeat;
-}
-
-.ctn-perk#perk-luck .ctn-perk-img{
-    background: top 27px left 13px / 202px auto url(static/luck/frame_23_delay-0.03s.png) no-repeat;
-}
 
 .perk-letter{
     position: absolute;

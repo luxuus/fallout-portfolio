@@ -855,11 +855,14 @@ button:hover{
 }
 
 .ctn-perk-box{
-    background: linear-gradient(to left, transparent, #ffffff1c, transparent);
-    border: 1px solid transparent;
-    border-top: 2px solid #ffffff2e;
+    position: relative;
+    background: linear-gradient(to bottom, #ffffff1c, transparent);
     padding: 25px;
     max-width: 1200px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #ffffff44, #ffffff0a, #ffffff00) 1;
+    border-bottom: 0;
 }
 
 .ctn-perk-desc{
@@ -872,6 +875,24 @@ button:hover{
 
 .ctn-perk-desc p{
     display: inline;
+}
+
+.ctn-perk-skills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ctn-perk-skills div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    aspect-ratio: 1/1;
+    background: linear-gradient(to top, #ffffff26, transparent);
+    border: 1px solid #ffffff66;
+    border-radius: 10px;
+    backdrop-filter: blur(1px);
 }
 
 .ctn-perk{

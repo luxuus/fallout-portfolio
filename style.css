@@ -2,6 +2,7 @@
 @font-face {font-family: "Chowderhead";src: url("Chowderhead-Medium.ttf")}
 @font-face {font-family: "Roboto";src: url("Roboto.ttf")}
 @font-face {font-family: "Brush Script";src: url("Brush-Script.ttf")}
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 
 
 /* Reset CSS */
@@ -27,6 +28,14 @@
     --link-luck: #a9a1b9;
 
 
+    /* Main Layer */
+    --layer-strength: url(img/noise.svg),linear-gradient(to right, #367330, #09471e);
+    --layer-perception: url(img/noise.svg),linear-gradient(to right, #5b4011, #301d00);
+    --layer-endurance: url(img/noise.svg),linear-gradient(to right, #198d8d, #06265d);
+    --layer-charisma: url(img/noise.svg),linear-gradient(to right, #c3640a, #5d380f);
+    --layer-intelligence: url(img/noise.svg),linear-gradient(to right, #756a26, #6c6642);
+    --layer-agility: url(img/noise.svg),linear-gradient(to right, #b1622e, #87634b);
+    --layer-luck: url(img/noise.svg),linear-gradient(to right, #8b5f9f, #837789);
 
 
     /* Specific Card Variables*/
@@ -115,16 +124,37 @@ html{
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar-track
+
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #666666;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #949494;
+}
+
 
 body{
     position: relative;
     z-index: 1;
 }
 
-.main-layer{
+#main-layer {
     position: relative;
     color: var(--clr-primary);
-    /* background-color: #325989; */
+    background: url(img/noise.svg),linear-gradient(to right, #4b4b4b, #888888);
     font-family: 'Roboto',sans-serif;
     box-shadow: inset 0px -4px 20px 8px #000000;
     min-height: 100vh;
@@ -132,9 +162,41 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 40px;
-    /* backdrop-filter: blur(10px); */
     z-index: 3;
-}
+    transition: 0.1s all ease-out;
+  }
+  
+  #main-layer.is-hovered {
+    background: url(img/noise.svg),linear-gradient(to right, #4b4b4b, #888888);
+  }
+  
+  #main-layer.is-hovered.strength {
+    background: url(img/noise.svg),linear-gradient(to right, #367330, #09471e);
+  }
+  
+  #main-layer.is-hovered.perception {
+    background: url(img/noise.svg),linear-gradient(to right, #5b4011, #301d00);
+  }
+  
+  #main-layer.is-hovered.endurance {
+    background: url(img/noise.svg),linear-gradient(to right, #198d8d, #06265d);
+  }
+  
+  #main-layer.is-hovered.charisma {
+    background: url(img/noise.svg),linear-gradient(to right, #c3640a, #5d380f);
+  }
+  
+  #main-layer.is-hovered.intelligence {
+    background: url(img/noise.svg),linear-gradient(to right, #756a26, #6c6642);
+  }
+  
+  #main-layer.is-hovered.agility {
+    background: url(img/noise.svg),linear-gradient(to right, #b1622e, #87634b);
+  }
+  
+  #main-layer.is-hovered.luck {
+    background: url(img/noise.svg),linear-gradient(to right, #8b5f9f, #837789);
+  }
 
 .background-layer::after,
 .background-layer::before{
@@ -166,47 +228,14 @@ body{
     background-color: #325989;
 }
 
-@media (max-width: 900px){
-    header{
-        transform: scale(0.85) translateY(-30px);
-    }
-}
-@media (max-width: 800px){
-    header{
-        transform: scale(0.75) translateY(-60px);
-    }
-}
-@media (max-width: 700px){
-    header{
-        transform: scale(0.65) translateY(-80px);
-    }
-}
-@media (max-width: 600px){
-    header{
-        transform: scale(0.55) translateY(-80px);
-    }
-}
 @media (max-width: 500px){
-    header{
-        transform: scale(0.45) translateY(-100px);
-    }
-
     .ctn-perk-box{
         display: flex;
         align-items: center;
         flex-direction: column;
     }
 }
-@media (max-width: 400px){
-    header{
-        transform: scale(0.35) translateY(-120px);
-    }
-}
-@media (max-width: 300px){
-    header{
-        transform: scale(0.25) translateY(-140px);
-    }
-}
+
 
 /* Start Navbar */
 
@@ -215,7 +244,7 @@ header{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: fit-content;
+    width: 100%;
     transition: all 0.2s ease-out;
 }
 
@@ -230,15 +259,41 @@ header{
 }
 
 .header-hero{
+    display: flex;
+    justify-content: center;
     position: relative;
     font-family: "Brush Script";
     color: #ffde67;
     font-size: 70px;
+    width: 100%;
+    text-shadow: -5px 2px red, 3px 4px #15a3a9;
 }
 
-.socials{
+.hero-section span{
+    text-shadow: -3px 3px red, 2px 5px #15a3a9;
+}
+
+.hero-section{
+    width: 80%;
+    height: 50vh;
+    font-size: 2em;
+}
+
+.top{
     display: flex;
+    height: 50px;
+    width: 100%;
+    background: white;
+    
+}
+
+.specials{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
+    transform : scale(0.85);
+    perspective: 1000px;
 }
 
 .socials svg:hover path{
@@ -525,6 +580,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 1920px;
     color: white;
     gap: 20px;
 }
@@ -845,59 +901,177 @@ button:hover{
     filter: drop-shadow(-1px 1px 1px var(--card-svg-drop-shadow));
 }
 
+.ctn-perk:hover .card-svg #rect4022{
+    filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow)) 
+    drop-shadow(-1px -1px 1px var(--card-svg-drop-shadow))
+    drop-shadow(2px -2px 1px rgb(0 0 0 / 0.4));
+}
+
+.ctn-perk:hover .card-svg #path1048{
+    filter: drop-shadow(1px 1px 1px var(--card-svg-drop-shadow))
+    drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+}
+
+.ctn-perk:hover .card-svg #path1037{
+    filter: drop-shadow(-1px 1px 1px var(--card-svg-drop-shadow));
+}
+
 
 .ctn-list--perks{
     position: relative;
     display: flex;
     justify-content: center;
-    gap: 50px;
     flex-direction: column;
+    width: 80%;
+    
 }
 
 .ctn-perk-box{
     position: relative;
-    background: linear-gradient(to bottom, #ffffff1c, transparent);
-    padding: 25px;
-    max-width: 1200px;
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(to bottom, #ffffff44, #ffffff0a, #ffffff00) 1;
-    border-bottom: 0;
+    filter: grayscale(1);
+    animation: grayscale 0.5s ease-out;
+    height: 1000px;
+    border-radius: 20px;
+
+}
+
+.ctn-perk-box::before{
+    /* content: ""; */
+    display: block;
+    position: relative;
+    transform: translateY(-100%);
+    width: 100%;
+    height: 100px;
+    background: inherit;
+}
+.ctn-perk-box:hover{
+    filter: grayscale(0);
+}
+
+.ctn-perk-box.strength{
+    background: url(img/noise.svg),linear-gradient(to right, #56765c, #719677);
+
+    /* background: linear-gradient(to right, #56765c, #719677); */
+}
+
+.ctn-perk-box.strength::before{
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ctn-perk-box.perception{
+    background: url(img/noise.svg),linear-gradient(to right, #706645, #564e32);
+}
+
+.ctn-perk-box.perception::before{
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 0% 0%);
+}
+
+.ctn-perk-box.endurance{
+    background: url(img/noise.svg),linear-gradient(to right, #3e8290, #73b2c0);
+}
+
+.ctn-perk-box.endurance::before{
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ctn-perk-box.charisma{
+    background: url(img/noise.svg),linear-gradient(to right, #d0883b, #8c663d);
+
+}
+
+.ctn-perk-box.charisma::before{
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ctn-perk-box.intelligence{
+    background: url(img/noise.svg),linear-gradient(to right, #aba081, #aba081);
+
+}
+
+.ctn-perk-box.intelligence::before{
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ctn-perk-box.agility{
+    background: url(img/noise.svg),linear-gradient(to right, #c7936e, #c7936e);
+
+}
+
+.ctn-perk-box.agility::before{
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ctn-perk-box.luck{
+    background: url(img/noise.svg),linear-gradient(to right, #887291, #9e95a2);
+}
+
+.ctn-perk-box.luck::before{
+    clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
 }
 
 .ctn-perk-desc{
-    display: inline;
     font-size: 1.5em;
     text-indent: 3em;
     text-align: justify;
-    font-family: 'Roboto';
+    font-family: 'Mukta', sans-serif;
 }
 
-.ctn-perk-desc p{
-    display: inline;
-}
-
-.ctn-perk-skills{
+.education{
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
-.ctn-perk-skills div{
+/* .ctn-perk-desc p{
+    display: inline;
+} */
+
+.ctn-perk-skills {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100px;
-    aspect-ratio: 1/1;
-    background: linear-gradient(to top, #ffffff26, transparent);
-    border: 1px solid #ffffff66;
-    border-radius: 10px;
-    backdrop-filter: blur(1px);
 }
 
+.skill-title{
+    display: flex;
+    flex: 1;
+}
+
+.skill-value {
+    display: flex;
+    flex: 3;
+    background-color: rgb(70, 156, 89);
+    height: 20px;
+}
+
+.skill-value.strength{
+    width: 90%;
+}
+.skill-value.perception{
+    width: 70%;
+}
+.skill-value.endurance{
+    width: 90%;
+}
+.skill-value.charisma{
+    width: 90%;
+}
+.skill-value.intelligence{
+    width: 90%;
+}
+.skill-value.agility{
+    width: 90%;
+}
+.skill-value.luck{
+    width: 90%;
+}
+
+.skill-text {
+    display: flex;
+    flex: 1;
+}
 .ctn-perk{
     position: relative;
-    float: left;
     height: 330px;
     width: 250px;
     opacity: 0.8;
@@ -908,64 +1082,101 @@ button:hover{
     /* clip-path: polygon(21% 14%, 12% 92%, 76% 90%, 81% 8%) */
 }
 
+
 .ctn-perk-box:hover .ctn-perk {
     opacity: 1;
     filter: none;
 }
 
-.ctn-perk-box#box-strength:hover .ctn-perk-img{
+
+.ctn-perk:hover{
+    opacity: 1;
+    filter: grayscale(0);
+    transform:translateZ(10px) scale(1.2);
+    
+}
+
+.ctn-perk-box.strength:hover .ctn-perk-img{
     background: top 30px left 29px / 183px auto url(img/FO76_vaultboy_strength.webp) no-repeat;
 }
 
-.ctn-perk#perk-strength .ctn-perk-img{
+.ctn-perk.strength:hover .ctn-perk-img{
+    background: top 30px left 29px / 183px auto url(img/FO76_vaultboy_strength.webp) no-repeat;
+}
+
+.ctn-perk.strength .ctn-perk-img{
     background: top 30px left 29px / 183px auto url(static/strength/frame_02_delay-0.84s.png) no-repeat;
 }
 
-.ctn-perk-box#box-perception:hover .ctn-perk-img{
+.ctn-perk-box.perception:hover .ctn-perk-img{
     background: top 30px left 29px / 181px auto url(img/FO76_vaultboy_perception.webp) no-repeat;
 }
 
-.ctn-perk#perk-perception .ctn-perk-img{
+.ctn-perk.perception:hover .ctn-perk-img{
+    background: top 30px left 29px / 181px auto url(img/FO76_vaultboy_perception.webp) no-repeat;
+}
+
+.ctn-perk.perception .ctn-perk-img{
     background: top 30px left 29px / 181px auto url(static/perception/frame_02_delay-0.3s.png) no-repeat;
 }
 
-.ctn-perk-box#box-endurance:hover .ctn-perk-img{
+.ctn-perk-box.endurance:hover .ctn-perk-img{
     background: top 13px left 5px / 212px auto url(img/FO76_vaultboy_endurance.webp) no-repeat;
 }
 
-.ctn-perk#perk-endurance .ctn-perk-img{
+
+.ctn-perk.endurance:hover .ctn-perk-img{
+    background: top 13px left 5px / 212px auto url(img/FO76_vaultboy_endurance.webp) no-repeat;
+}
+.ctn-perk.endurance .ctn-perk-img{
     background: top 13px left 5px / 212px auto url(static/endurance/frame_02_delay-0.45s.png) no-repeat;
 }
 
-.ctn-perk-box#box-charisma:hover .ctn-perk-img{
+.ctn-perk-box.charisma:hover .ctn-perk-img{
     background: top 39px left -3px / 233px auto url(img/FO76_vaultboy_charisma.webp) no-repeat;
 }
 
-.ctn-perk#perk-charisma .ctn-perk-img{
+.ctn-perk.charisma:hover .ctn-perk-img{
+    background: top 39px left -3px / 233px auto url(img/FO76_vaultboy_charisma.webp) no-repeat;
+}
+
+.ctn-perk.charisma .ctn-perk-img{
     background: top 39px left -3px / 233px auto url(static/charisma/frame_15_delay-0.63s.png) no-repeat;
 }
 
-.ctn-perk-box#box-intelligence:hover .ctn-perk-img{
+.ctn-perk-box.intelligence:hover .ctn-perk-img{
     background: top 30px left 27px / 169px auto url(img/FO76_vaultboy_intelligence.webp) no-repeat;
 }
 
-.ctn-perk#perk-intelligence .ctn-perk-img{
+.ctn-perk.intelligence:hover .ctn-perk-img{
+    background: top 30px left 27px / 169px auto url(img/FO76_vaultboy_intelligence.webp) no-repeat;
+}
+
+.ctn-perk.intelligence .ctn-perk-img{
     background: top 30px left 27px / 169px auto url(static/intelligence/frame_03_delay-0.06s.png) no-repeat;
 }
 
-.ctn-perk-box#box-agility:hover .ctn-perk-img{
+.ctn-perk-box.agility:hover .ctn-perk-img{
     background: top 60px left 29px / 183px auto url(img/FO76_vaultboy_agility.webp) no-repeat;
 }
 
-.ctn-perk#perk-agility .ctn-perk-img{
+.ctn-perk.agility:hover .ctn-perk-img{
+    background: top 60px left 29px / 183px auto url(img/FO76_vaultboy_agility.webp) no-repeat;
+}
+
+.ctn-perk.agility .ctn-perk-img{
     background: top 60px left 29px / 183px auto url(static/agility/frame_02_delay-0.48s.png) no-repeat;
 }
 
-.ctn-perk-box#box-luck:hover .ctn-perk-img{
+.ctn-perk-box.luck:hover .ctn-perk-img{
     background: top 27px left 13px / 202px auto url(img/FO76_vaultboy_luck.webp) no-repeat;
 }
 
-.ctn-perk#perk-luck .ctn-perk-img{
+.ctn-perk.luck:hover .ctn-perk-img{
+    background: top 27px left 13px / 202px auto url(img/FO76_vaultboy_luck.webp) no-repeat;
+}
+
+.ctn-perk.luck .ctn-perk-img{
     background: top 27px left 13px / 202px auto url(static/luck/frame_23_delay-0.03s.png) no-repeat;
 }
 
